@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Github, Star, GitFork, Users, Code, Zap, Shield, Heart, Lightbulb, Globe, Wrench, Heart as HeartIcon, Search, MessageCircle, Menu, X } from "lucide-react"
+import { Github, Star, GitFork, Users, Code, Zap, Shield, Heart, Lightbulb, Globe, Wrench, Heart as HeartIcon, Search, MessageCircle, Menu, X, Palette, Map } from "lucide-react"
 import { useState, useEffect, useRef } from "react"
 import { Footer } from "@/components/ui/footer"
 import Image from "next/image"
@@ -204,10 +204,10 @@ export default function Component() {
 
       {/* Desktop Navigation */}
       <nav className={`fixed top-8 left-1/2 transform -translate-x-1/2 z-50 hidden lg:flex items-center bg-white/5 backdrop-blur-2xl border border-white/10 rounded-full px-4 py-3 shadow-xl shadow-black/20 transition-all duration-500 ease-out ${navVisible ? 'translate-y-0 opacity-100' : '-translate-y-20 opacity-0'}`}>
-        <NavLink sectionId="home">Home</NavLink>
-        <NavLink sectionId="about">About</NavLink>
-        <NavLink sectionId="contribute">Contribute</NavLink>
-        <NavLink sectionId="community">Community</NavLink>
+        <NavLink sectionId="home">The Loop</NavLink>
+        <NavLink sectionId="about">Origins</NavLink>
+        <NavLink sectionId="contribute">Forge</NavLink>
+        <NavLink sectionId="community">Circle</NavLink>
       </nav>
 
       {/* Mobile Navigation */}
@@ -225,10 +225,10 @@ export default function Component() {
         <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={() => setMobileMenuOpen(false)}></div>
         <div className={`absolute top-0 right-0 w-64 h-full bg-white/10 backdrop-blur-2xl border-l border-white/20 transform transition-transform duration-300 ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
           <div className="p-6 flex flex-col space-y-4">
-            <NavLink sectionId="home" onClick={() => setMobileMenuOpen(false)}>Home</NavLink>
-            <NavLink sectionId="about" onClick={() => setMobileMenuOpen(false)}>About</NavLink>
-            <NavLink sectionId="contribute" onClick={() => setMobileMenuOpen(false)}>Contribute</NavLink>
-            <NavLink sectionId="community" onClick={() => setMobileMenuOpen(false)}>Community</NavLink>
+            <NavLink sectionId="home" onClick={() => setMobileMenuOpen(false)}>The Loop</NavLink>
+            <NavLink sectionId="about" onClick={() => setMobileMenuOpen(false)}>Origins</NavLink>
+            <NavLink sectionId="contribute" onClick={() => setMobileMenuOpen(false)}>Forge</NavLink>
+            <NavLink sectionId="community" onClick={() => setMobileMenuOpen(false)}>Circle</NavLink>
           </div>
         </div>
       </div>
@@ -256,38 +256,37 @@ export default function Component() {
                 <div>
                   <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-6 leading-tight">
                     <span className="bg-gradient-to-r from-white via-violet-200 to-purple-300 bg-clip-text text-transparent" style={{fontFamily: 'Orbitron, monospace', fontWeight: '700'}}>
-                      Shaping the Future of
-                    </span>
-                    <br />
+                    The </span>
                     <span className="bg-gradient-to-r from-violet-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent" style={{fontFamily: 'Orbitron, monospace', fontWeight: '700'}}>
-                      Open Source
+                    Loop </span>
+                    <span className="bg-gradient-to-r from-white via-violet-200 to-purple-300 bg-clip-text text-transparent" style={{fontFamily: 'Orbitron, monospace', fontWeight: '700'}}>
+                      is forming
                     </span>
                   </h1>
                   <p className="text-lg sm:text-xl lg:text-2xl text-purple-200 leading-relaxed max-w-2xl">
-                    Project Marvlock is a community-driven organization dedicated to creating powerful, accessible, and
-                    innovative open source solutions that empower developers worldwide.
+                  For those who build, design, and decode your place is here.
                   </p>
                 </div>
                 
                 {/* Call to Action Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4 pt-4">
                   <Button 
-                    className="bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white border-0 px-8 sm:px-12 py-4 sm:py-6 text-lg sm:text-xl font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 cursor-pointer"
+                    className="bg-transparent border border-white/20 text-purple-200 hover:bg-white/5 hover:border-white/30 transition-all duration-300 px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-light rounded-lg opacity-70 hover:opacity-100 cursor-pointer"
                     onClick={() => scrollToSection('about')}
                   >
-                    Documentation
-                    <svg className="w-4 h-4 sm:w-5 sm:h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    The Scrolls
+                    <svg className="w-3 h-3 sm:w-4 sm:h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </Button>
                   <Button 
-                    className="bg-white/10 backdrop-blur-sm border border-white/30 hover:bg-white/20 text-white px-8 sm:px-12 py-4 sm:py-6 text-lg sm:text-xl font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
+                    className="bg-transparent border border-white/20 text-purple-200 hover:bg-white/5 hover:border-white/30 transition-all duration-300 px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-light rounded-lg opacity-70 hover:opacity-100"
                     asChild
                   >
                     <a href="https://github.com/marvlock" target="_blank" rel="noopener noreferrer">
-                      <Github className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                      GitHub
-                      <svg className="w-4 h-4 sm:w-5 sm:h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <Github className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
+                      The Forge
+                      <svg className="w-3 h-3 sm:w-4 sm:h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
                     </a>
@@ -317,54 +316,24 @@ export default function Component() {
         <div className="h-32 section-transition"></div>
       </section>
 
-      {/* About Section */}
+      {/* Philosophy Section */}
       <section id="about" className="py-16 relative">
         <div className="container mx-auto px-4 lg:px-6 max-w-6xl">
           <div className="text-center mb-20">
             <h2 className="text-4xl lg:text-6xl font-bold mb-8 bg-gradient-to-r from-white via-violet-200 to-purple-300 bg-clip-text text-transparent" style={{fontFamily: 'Orbitron, monospace', fontWeight: '700'}}>
-              About
+              Philosophy
             </h2>
-            <p className="text-2xl text-purple-200 leading-relaxed max-w-4xl mx-auto mb-12">
-              Project Marvlock is a community-driven initiative building accessible and powerful open-source tools for developers worldwide.
-            </p>
             
-            <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-              <div className="text-left">
-                <h3 className="text-xl font-semibold text-white mb-6">Core Values</h3>
-                <div className="space-y-4">
-                  <div className="flex items-center text-purple-200">
-                    <Lightbulb className="w-6 h-6 mr-3 text-violet-400" />
-                    <span>Innovation through collaboration</span>
-                  </div>
-                  <div className="flex items-center text-purple-200">
-                    <Globe className="w-6 h-6 mr-3 text-violet-400" />
-                    <span>Accessibility for all</span>
-                  </div>
-                  <div className="flex items-center text-purple-200">
-                    <Wrench className="w-6 h-6 mr-3 text-violet-400" />
-                    <span>Build in public</span>
-                  </div>
-                  <div className="flex items-center text-purple-200">
-                    <HeartIcon className="w-6 h-6 mr-3 text-violet-400" />
-                    <span>Developer-first approach</span>
-                  </div>
-                </div>
-              </div>
+            <div className="max-w-4xl mx-auto space-y-12">
+              <p className="text-2xl lg:text-3xl text-purple-200 leading-relaxed font-light">
+                We build stuff that don't shout. They shimmer quietly in the background.
+              </p>
               
-              <div className="text-left">
-                <h3 className="text-xl font-semibold text-white mb-6">What We Do</h3>
-                <p className="text-purple-200 leading-relaxed mb-6">
-                We build powerful tools, libraries, and platforms that streamline workflows, fuel learning, and empower anyone to contribute developers, tinkerers, and curious minds alike.
-                </p>
-                <h3 className="text-xl font-semibold text-white mb-6">Origin Story</h3>
-                <p className="text-purple-200 leading-relaxed">
-                Started by two student devs who believed open source could be cooler and decided to prove it.
-                </p>
-              </div>
+              <p className="text-xl lg:text-2xl text-purple-300 leading-relaxed font-light">
+                Presence over noise. Signal over chaos. Open, but intentional.
+              </p>
             </div>
           </div>
-
-
         </div>
         
         <div className="absolute bottom-0 left-0 right-0 h-32 section-transition"></div>
@@ -372,31 +341,28 @@ export default function Component() {
 
 
 
-      {/* Contribute Section */}
+      {/* The Path Section */}
       <section id="contribute" className="py-16 relative">
         <div className="container mx-auto px-4 lg:px-6 max-w-4xl text-center">
           <h2 className="text-4xl lg:text-6xl font-bold mb-8 bg-gradient-to-r from-white via-violet-200 to-purple-300 bg-clip-text text-transparent" style={{fontFamily: 'Orbitron, monospace', fontWeight: '700'}}>
-            Start Contributing
+            The Path
           </h2>
-          <p className="text-xl text-purple-200 mb-12 max-w-2xl mx-auto">
-            Whether you're a seasoned developer or just starting out, there's a place for you in our community.
-          </p>
           
           <div className="grid md:grid-cols-3 gap-6 text-center">
             {[
               {
-                title: "Explore",
-                desc: "Discover repositories and ideas that match your interests.",
+                title: "Discover",
+                desc: "find signals hidden in the noise",
                 icon: "Search",
               },
               {
                 title: "Connect",
-                desc: "Jump into discussions and introduce yourself to the community.",
+                desc: "meet others who walk the same path",
                 icon: "MessageCircle",
               },
               {
-                title: "Contribute",
-                desc: "Start small and gradually make larger impact.",
+                title: "Shape",
+                desc: "leave your mark in the loop",
                 icon: "GitFork",
               },
             ].map((item) => (
@@ -419,62 +385,98 @@ export default function Component() {
         <div className="absolute bottom-0 left-0 right-0 h-32 section-transition"></div>
       </section>
 
-      {/* Community Section */}
+      {/* The Circle Awaits Section */}
       <section id="community" className="py-16 relative">
-        <div className="container mx-auto px-4 lg:px-6 max-w-4xl text-center">
+        <div className="container mx-auto px-4 lg:px-6 max-w-6xl text-center">
           <h2 className="text-4xl lg:text-6xl font-bold mb-8 bg-gradient-to-r from-white via-violet-200 to-purple-300 bg-clip-text text-transparent" style={{fontFamily: 'Orbitron, monospace', fontWeight: '700'}}>
-            Join Our Community
+            Roles in the Loop
           </h2>
-          <p className="text-xl text-purple-200 mb-12 max-w-2xl mx-auto">
-            Connect with like-minded developers, share ideas, and build the future of open source together.
-          </p>
           
-          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-12">
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="text-left">
-                <h3 className="text-2xl font-bold text-white mb-6">Why Join Us?</h3>
-                <ul className="space-y-4 text-purple-200">
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-violet-400 rounded-full mr-3"></div>
-                    Learn from experienced developers
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-violet-400 rounded-full mr-3"></div>
-                    Work on meaningful projects
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-violet-400 rounded-full mr-3"></div>
-                    Build your portfolio
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-violet-400 rounded-full mr-3"></div>
-                    Make lasting connections
-                  </li>
-                </ul>
-              </div>
-              <div className="text-left">
-                <h3 className="text-2xl font-bold text-white mb-6">Get Started</h3>
-                <div className="space-y-4">
-                  <Button className="w-full bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white border-0 cursor-pointer" asChild>
-                    <a href="https://discord.gg/CS5mVEsjre" target="_blank" rel="noopener noreferrer">
-                      Join Discord
-                    </a>
-                  </Button>
-                  <Button className="w-full bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800 text-white border border-white/30 cursor-pointer" asChild>
-                    <a href="https://x.com/ProjectMarvlock" target="_blank" rel="noopener noreferrer">
-                      Follow on X
-                    </a>
-                  </Button>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+            {[
+              {
+                title: "The Builder",
+                desc: "shape what others depend on.",
+                icon: "Wrench",
+              },
+              {
+                title: "The Dreamer",
+                desc: "design what others feel.",
+                icon: "Palette",
+              },
+              {
+                title: "The Mapper",
+                desc: "decode patterns and signals.",
+                icon: "Map",
+              },
+              {
+                title: "The Connector",
+                desc: "expand the circle quietly.",
+                icon: "Users",
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="p-6 bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 hover:bg-white/10 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 group"
+              >
+                <div className="w-12 h-12 bg-gradient-to-br from-violet-400/20 to-purple-500/20 rounded-xl flex items-center justify-center mb-4 mx-auto group-hover:scale-110 group-hover:bg-gradient-to-br group-hover:from-violet-400/30 group-hover:to-purple-500/30 transition-all duration-300">
+                  {item.icon === "Wrench" && <Wrench className="w-6 h-6 text-violet-400" />}
+                  {item.icon === "Palette" && <Palette className="w-6 h-6 text-violet-400" />}
+                  {item.icon === "Map" && <Map className="w-6 h-6 text-violet-400" />}
+                  {item.icon === "Users" && <Users className="w-6 h-6 text-violet-400" />}
                 </div>
+                <h3 className="text-lg font-semibold text-white mb-2">{item.title}</h3>
+                <p className="text-sm text-purple-200 leading-relaxed">{item.desc}</p>
               </div>
-            </div>
+            ))}
           </div>
         </div>
         
         <div className="absolute bottom-0 left-0 right-0 h-32 section-transition"></div>
       </section>
 
+      {/* Knock Gently Button */}
+      <section className="py-8 relative">
+        <div className="container mx-auto px-4 lg:px-6 text-center">
+          <Button 
+            className="bg-transparent border border-white/20 text-purple-200 hover:bg-white/5 hover:border-white/30 transition-all duration-300 px-8 py-3 text-sm font-light"
+            asChild
+          >
+            <a href="mailto:marvlock.dev@gmail.com?subject=Application" target="_blank" rel="noopener noreferrer">
+              Knock gently
+            </a>
+          </Button>
+        </div>
+      </section>
 
+      {/* The Gathering Section */}
+      <section id="gathering" className="py-16 relative">
+        <div className="container mx-auto px-4 lg:px-6 max-w-4xl text-center">
+          <h2 className="text-4xl lg:text-6xl font-bold mb-8 bg-gradient-to-r from-white via-violet-200 to-purple-300 bg-clip-text text-transparent" style={{fontFamily: 'Orbitron, monospace', fontWeight: '700'}}>
+            The Gathering
+          </h2>
+          <p className="text-xl text-purple-200 mb-12 max-w-2xl mx-auto">
+            Find others who notice what you notice.
+          </p>
+          
+          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-12">
+            <div className="space-y-4">
+              <Button className="w-full bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white border-0 cursor-pointer" asChild>
+                <a href="https://discord.gg/CS5mVEsjre" target="_blank" rel="noopener noreferrer">
+                  Step Inside
+                </a>
+              </Button>
+              <Button className="w-full bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800 text-white border border-white/30 cursor-pointer" asChild>
+                <a href="https://x.com/ProjectMarvlock" target="_blank" rel="noopener noreferrer">
+                  Follow The Loop
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
+        
+        <div className="absolute bottom-0 left-0 right-0 h-32 section-transition"></div>
+      </section>
 
       <Footer />
     </div>
