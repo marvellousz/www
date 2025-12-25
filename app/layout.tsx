@@ -3,6 +3,7 @@ import './globals.css'
 import { AppWrapper } from '@/components/ui/app-wrapper'
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://marvlock.dev'),
   title: 'Project Marvlock — Design and Build Digital Products',
   description: 'We design and build digital products that define the future. From startups to enterprises — we craft intuitive, high-performance websites, apps, and dashboards.',
   icons: {
