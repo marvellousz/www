@@ -7,7 +7,7 @@ import { springTransition } from "@/lib/animations"
 
 export function Footer() {
   return (
-    <footer className="pt-12 sm:pt-16 pb-6 px-4 sm:px-6 border-t border-white/5 relative z-10 bg-black">
+    <footer className="pt-12 sm:pt-16 pb-6 px-4 sm:px-6 border-t border-[#E2E8F0]/30 relative z-10">
       <div className="container mx-auto max-w-6xl w-full">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 sm:gap-8">
           <div className="flex items-center gap-2 sm:gap-3">
@@ -18,7 +18,7 @@ export function Footer() {
               height={20}
               className="w-4 h-4 sm:w-5 sm:h-5"
             />
-            <div className="text-xs sm:text-sm font-medium">Project Marvlock</div>
+            <div className="text-xs sm:text-sm font-medium text-[#0E1117]">Project Marvlock</div>
           </div>
           <div className="flex flex-wrap gap-4 sm:gap-6">
             {SOCIAL_LINKS.map((link) => (
@@ -27,7 +27,7 @@ export function Footer() {
                 href={link.href}
                 target={link.href.startsWith('http') ? '_blank' : undefined}
                 rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-[#94A3B8] hover:text-white transition-colors cursor-pointer group"
+                className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-[#64748B] hover:text-[#0E1117] transition-colors cursor-pointer group"
                 whileHover={{ y: -2 }}
                 transition={springTransition}
               >
@@ -43,8 +43,8 @@ export function Footer() {
             ))}
           </div>
         </div>
-        <div className="pt-6 sm:pt-8 mt-6 sm:mt-8 border-t border-white/5 text-center text-xs sm:text-sm text-[#94A3B8]">
-          © 2025 Project Marvlock. All rights reserved.
+        <div className="pt-6 sm:pt-8 mt-6 sm:mt-8 border-t border-[#E2E8F0] text-center text-xs sm:text-sm text-[#64748B]">
+          © 2026 Project Marvlock. All rights reserved.
         </div>
       </div>
     </footer>
